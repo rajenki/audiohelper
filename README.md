@@ -28,11 +28,11 @@ var synthesizedText = "Hello World";
 SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(synthesizedText);
 
 // Initialize the byte buffer
-byte[] bytes = new byte[voiceStream.Size];
+byte[] bytes = new byte[stream.Size];
 IBuffer buffer = bytes.AsBuffer();
 
 // Read the stream into the buffer
-await voiceStream.ReadAsync(buffer, (uint)voiceStream.Size, InputStreamOptions.None);
+await stream.ReadAsync(buffer, (uint)stream.Size, InputStreamOptions.None);
 AudioPlayer.Instance.PlayAudio(synthesizedText, buffer);
 ```
 
