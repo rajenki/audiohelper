@@ -19,6 +19,7 @@ AudioHelper.AudioPlayer.Instance.PlayAudio(@"HelloWorld.wav");
 ### Play a fragment using the speech synthesis engine
 
 * Use the SpeechSynthesizer to create the stream, read the resulting stream into a byte buffer and play the resulting buffer using the AudioPlayer
+  * NOTE: Make sure you enable the Microphone capability in the manifest to use speech synthesis
 ```csharp
 // The object for controlling the speech synthesis engine (voice).
 var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
